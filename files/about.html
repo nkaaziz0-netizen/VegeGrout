@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — VEGE·GROUT</title>
+<meta name="description" content="The academic-industry team behind the Vege-Grout ground stabilization system.">
+<link rel="icon" href="assets/vg3s-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>VEGE·GROUT</a>
+    <div class="nav-center">
+      <nav class="navlinks">
+      <a href="technology.html">Technology</a>
+      <a href="products.html">Products</a>
+      <a href="projects.html">Case Studies</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="#" data-open-modal>Get a Quote →</a>
+      <div class="nav-actions">
+        <div class="account-wrap" id="accountWrap">
+          <div class="account-chip" id="accountChip" style="display:none;">
+            <span class="account-avatar" id="accountAvatar">?</span>
+            <span class="account-name" id="accountName"></span>
+            <span class="account-caret">▾</span>
+          </div>
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="ad-email" id="accountEmail"></div>
+            <button id="logoutBtn">Log out</button>
+          </div>
+        </div>
+        <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="overlay-close" id="overlayClose">Close ✕</button>
+  <nav>
+    <a href="technology.html" data-nav-link>Technology</a>
+    <a href="products.html" data-nav-link>Products</a>
+    <a href="projects.html" data-nav-link>Case Studies</a>
+    <a href="partners.html" data-nav-link>Partners</a>
+    <a href="about.html" data-nav-link>About</a>
+    <a href="#" id="authTrigger" data-open-auth>Log In</a>
+  </nav>
+  <div class="overlay-foot">
+    <span>Kajang, Selangor, MY</span>
+    <span>hello@vegegrout.com</span>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h3>Request a site assessment</h3>
+    <p class="sub">Tell us about the slope — we'll open WhatsApp with your details filled in.</p>
+    <form id="quoteForm">
+      <div class="field"><label>Name</label><input type="text" id="qName" required></div>
+      <div class="field"><label>Location / slope</label><input type="text" id="qLocation" required></div>
+      <div class="field"><label>Approx. slope size (m²)</label><input type="text" id="qSize"></div>
+      <div class="field"><label>Message</label><textarea rows="3" id="qMessage"></textarea></div>
+      <button type="submit" class="btn-whatsapp">💬 Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<div class="auth-backdrop" id="authBackdrop">
+  <div class="auth-modal">
+    <button class="modal-close" id="authClose">✕</button>
+
+    <form class="auth-form" id="loginForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Log in to your account</h3>
+      <p class="sub">For clients tracking an active or completed slope treatment.</p>
+      <div class="auth-error" id="loginError">Enter a valid email and a password of at least 6 characters.</div>
+      <div class="field"><label>Email</label><input type="email" id="liEmail" required></div>
+      <div class="field"><label>Password</label><input type="password" id="liPassword" required></div>
+      <button type="submit" class="btn-submit">Log In</button>
+      <div class="auth-switch">Don't have an account? <button type="button" id="toSignup">Sign up</button></div>
+    </form>
+
+    <form class="auth-form hidden" id="signupForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Create an account</h3>
+      <p class="sub">Get project updates and monitoring reports for your treated site.</p>
+      <div class="auth-error" id="signupError">Please fill in all fields — passwords must match and be at least 6 characters.</div>
+      <div class="field"><label>Full name</label><input type="text" id="suName" required></div>
+      <div class="field"><label>Email</label><input type="email" id="suEmail" required></div>
+      <div class="field-row">
+        <div class="field"><label>Password</label><input type="password" id="suPassword" required></div>
+        <div class="field"><label>Confirm</label><input type="password" id="suConfirm" required></div>
+      </div>
+      <button type="submit" class="btn-submit">Create Account</button>
+      <div class="auth-switch">Already have an account? <button type="button" id="toLogin">Log in</button></div>
+    </form>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">About Us</div>
+    <h1>An academic-industry team, ten years into one problem.</h1>
+    <p class="lede">Vege-Grout began as university research into bio-mediated soil improvement and has grown into a commercially deployed, patented system — built on a continuing partnership between UNITEN's research team and industry.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="wrap">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-avatar">RC</div>
+        <span class="role">Project Lead · UNITEN</span>
+        <h3>Prof. Madya Dr. Rohayu Che Omar</h3>
+        <p>Leads the research team behind Vege-Grout's formulation, from the original 2009–2011 lab findings through to the current field-proven system and its granted patent.</p>
+      </div>
+      <div class="team-card">
+        <div class="tc-avatar">GT</div>
+        <span class="role">Industry Collaborator</span>
+        <h3>Geomapping Technology Sdn. Bhd.</h3>
+        <p>Commercial and technical partner handling bulk production, geotechnical design, and skilled installation crews for current deep-seated landslide projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ten Years of R&amp;D</div>
+      <h2>From lab formulation to field-proven system.</h2>
+    </div>
+    <div class="history-timeline">
+      <div class="history-item"><span class="hy">2009 – 2011</span><h4>Formulation research</h4><p>Promising early findings on fermented vegetable-waste formulation, dosage ratios, and curing time.</p></div>
+      <div class="history-item"><span class="hy">2013</span><h4>Patent filed</h4><p>"Soil and Rock Remediation Process and a Remedial Composition Modification using Vegetable Waste" — Application PI 2013701380.</p></div>
+      <div class="history-item"><span class="hy">2013 – 2015</span><h4>Lab-scale proof of concept</h4><p>Trials at UNITEN's own student parking lot and at KM22.2, Sg. Betis (Gua Musang–Simpang Pulai).</p></div>
+      <div class="history-item"><span class="hy">2016</span><h4>Pilot-scale validation</h4><p>Production enhancements and scale-up across multiple soil types, topographies, and slope conditions.</p></div>
+      <div class="history-item"><span class="hy">2017 – 2020</span><h4>Market traction</h4><p>First paid commercial projects with OPUS Berhad, MF Construction, and Landasan Kapital Sdn. Bhd.</p></div>
+      <div class="history-item"><span class="hy">2020</span><h4>Patent granted</h4><p>Grant Number MY-174566-A — the system moves from filed to fully protected IP.</p></div>
+      <div class="history-item"><span class="hy">Present</span><h4>TRL 7 — deep-seated projects underway</h4><p>Active deployment on deep-seated landslide sites in partnership with Geomapping Technology Sdn. Bhd.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">IP Portfolio</div>
+      <h2>Protected at every layer of the system.</h2>
+    </div>
+    <div class="partner-perks">
+      <div class="perk"><div class="n">1</div><div class="t">Granted patent — MY-174566-A, soil &amp; rock remediation process</div></div>
+      <div class="perk"><div class="n">2</div><div class="t">Copyrights — production method statements and site investigation SOPs</div></div>
+      <div class="perk"><div class="n">1</div><div class="t">Trademark covering the commercial VG3S system branding</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <div class="wrap">
+    <h2>Want to talk to the research team directly?</h2>
+    <p>For academic collaboration, media, or technical due-diligence requests.</p>
+    <div class="cta-buttons">
+      <a class="btn-whatsapp" href="#" data-open-modal>💬 Get in touch</a>
+      <a class="btn-outline-light" href="index.html">Back to home →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>VEGE·GROUT</div>
+        <p>Self-sustaining soil stabilization from vegetable waste. Developed with UNITEN, deployed with Geomapping Technology Sdn Bhd.</p>
+        <a class="foot-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+      <div><h4>Site</h4><ul class="footer-links">
+        <li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Case Studies</a></li><li><a href="partners.html">Partners</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul class="footer-links">
+        <li>hello@vegegrout.com</li><li>+60 12-345 6789</li><li>Kajang, Selangor, MY</li>
+      </ul></div>
+      <div><h4>Credentials</h4><ul class="footer-links">
+        <li>Patent MY-174566-A</li><li>TRL 7 · Field Proven</li><li>BS 1377 Compliant Testing</li>
+      </ul></div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 VEGE-GROUT (VG3S). All rights reserved. — dummy content for design preview</span>
+      <span>Privacy Policy</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<script src="assets/script.js"></script>
+</body>
+</html>

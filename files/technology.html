@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Technology — VEGE·GROUT</title>
+<meta name="description" content="How MICP and bio-mineralization stabilize soil — mechanism, lab data, and installation SOP.">
+<link rel="icon" href="assets/vg3s-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>VEGE·GROUT</a>
+    <div class="nav-center">
+      <nav class="navlinks">
+      <a href="technology.html" class="active">Technology</a>
+      <a href="products.html">Products</a>
+      <a href="projects.html">Case Studies</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="#" data-open-modal>Get a Quote →</a>
+      <div class="nav-actions">
+        <div class="account-wrap" id="accountWrap">
+          <div class="account-chip" id="accountChip" style="display:none;">
+            <span class="account-avatar" id="accountAvatar">?</span>
+            <span class="account-name" id="accountName"></span>
+            <span class="account-caret">▾</span>
+          </div>
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="ad-email" id="accountEmail"></div>
+            <button id="logoutBtn">Log out</button>
+          </div>
+        </div>
+        <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="overlay-close" id="overlayClose">Close ✕</button>
+  <nav>
+    <a href="technology.html" data-nav-link>Technology</a>
+    <a href="products.html" data-nav-link>Products</a>
+    <a href="projects.html" data-nav-link>Case Studies</a>
+    <a href="partners.html" data-nav-link>Partners</a>
+    <a href="about.html" data-nav-link>About</a>
+    <a href="#" id="authTrigger" data-open-auth>Log In</a>
+  </nav>
+  <div class="overlay-foot">
+    <span>Kajang, Selangor, MY</span>
+    <span>hello@vegegrout.com</span>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h3>Request a site assessment</h3>
+    <p class="sub">Tell us about the slope — we'll open WhatsApp with your details filled in.</p>
+    <form id="quoteForm">
+      <div class="field"><label>Name</label><input type="text" id="qName" required></div>
+      <div class="field"><label>Location / slope</label><input type="text" id="qLocation" required></div>
+      <div class="field"><label>Approx. slope size (m²)</label><input type="text" id="qSize"></div>
+      <div class="field"><label>Message</label><textarea rows="3" id="qMessage"></textarea></div>
+      <button type="submit" class="btn-whatsapp">💬 Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<div class="auth-backdrop" id="authBackdrop">
+  <div class="auth-modal">
+    <button class="modal-close" id="authClose">✕</button>
+
+    <form class="auth-form" id="loginForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Log in to your account</h3>
+      <p class="sub">For clients tracking an active or completed slope treatment.</p>
+      <div class="auth-error" id="loginError">Enter a valid email and a password of at least 6 characters.</div>
+      <div class="field"><label>Email</label><input type="email" id="liEmail" required></div>
+      <div class="field"><label>Password</label><input type="password" id="liPassword" required></div>
+      <button type="submit" class="btn-submit">Log In</button>
+      <div class="auth-switch">Don't have an account? <button type="button" id="toSignup">Sign up</button></div>
+    </form>
+
+    <form class="auth-form hidden" id="signupForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Create an account</h3>
+      <p class="sub">Get project updates and monitoring reports for your treated site.</p>
+      <div class="auth-error" id="signupError">Please fill in all fields — passwords must match and be at least 6 characters.</div>
+      <div class="field"><label>Full name</label><input type="text" id="suName" required></div>
+      <div class="field"><label>Email</label><input type="email" id="suEmail" required></div>
+      <div class="field-row">
+        <div class="field"><label>Password</label><input type="password" id="suPassword" required></div>
+        <div class="field"><label>Confirm</label><input type="password" id="suConfirm" required></div>
+      </div>
+      <button type="submit" class="btn-submit">Create Account</button>
+      <div class="auth-switch">Already have an account? <button type="button" id="toLogin">Log in</button></div>
+    </form>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">The Science</div>
+    <h1>How MICP &amp; bio-mineralization turn loose soil into bound ground.</h1>
+    <p class="lede">Vege-Grout works through Microbially Induced Calcite Precipitation (MICP) — a naturally occurring bacterial process, here driven by fermented vegetable waste, that grows mineral bonds between soil particles instead of coating them in synthetic cement.</p>
+    <div class="stat-strip">
+      <div><div class="num">pH 8.0</div><div class="lbl">optimum pH to induce calcite precipitation</div></div>
+      <div><div class="num">L. mesenteroides</div><div class="lbl">active bacterial culture identified in Vege-Grout</div></div>
+      <div><div class="num">10 yrs</div><div class="lbl">of formulation and field R&amp;D behind the current mix</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="wrap content-grid-2">
+    <div>
+      <h2>The mechanism</h2>
+      <p class="desc">Fermented vegetable waste is cultured to encourage bacteria — identified as <em>Leuconostoc mesenteroides</em> — that raise the local pH toward the 8.0 threshold at which calcite precipitates between soil grains. That mineral precipitate is what binds particles together: the same basic chemistry behind natural sandstone formation, compressed into weeks instead of geological time.</p>
+      <p class="desc">During monitored fermentation, pH, temperature, and ammonia (NH₄) levels are tracked throughout the process — by day 95 of a monitored fermentation cycle, pH reached 6, continuing to trend toward the calcite-inducing range as curing progresses on-site.</p>
+      <div class="badge-row">
+        <span class="badge">BS 1377 : Parts 1, 2, 5, 7</span>
+        <span class="badge">Eurocode 7</span>
+        <span class="badge">BS ISO 1920-3:2019</span>
+      </div>
+    </div>
+    <table class="spec-table">
+      <tr><th>VG Dosage</th><th>Cohesion (kN/m²)</th><th>Friction Angle</th><th>Permeability (m/s)</th></tr>
+      <tr><td>0% (control)</td><td>15</td><td>26°</td><td>3.36×10⁻⁶</td></tr>
+      <tr><td>15.0%</td><td>38</td><td>28°</td><td>1.10×10⁻⁶</td></tr>
+      <tr><td>20.0%</td><td>53</td><td>31°</td><td>5.70×10⁻⁷</td></tr>
+      <tr><td>22.5%</td><td>61</td><td>38°</td><td>2.99×10⁻⁷</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="process content-section alt" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The 5-Stage Installation SOP</div>
+      <h2>Coverage spreads the way the grout itself does.</h2>
+      <p class="desc">Every stage below follows the site's own written Standard Operating Procedure, in sequence, from first inspection to lab-verified result.</p>
+    </div>
+    <div class="bloom-field" id="bloomField">
+      <div class="bloom-dots" id="bloomDots"></div>
+      <div class="process-list" id="processList">
+        <div class="step"><span class="idx">01</span><h3>Site Clearing</h3><p>Trim the slope to a stable, uniform profile and clear loose debris before survey work begins.</p></div>
+        <div class="step"><span class="idx">02</span><h3>Resistivity Survey</h3><p>Inject current through electrode pairs to map groundwater depth and subsurface stratigraphy, then mark injection points.</p></div>
+        <div class="step"><span class="idx">03</span><h3>Grout Injection</h3><p>40mm PVC pipes at 0.5–1m depth, 1m spacing; Vege-Grout applied at 3.7 L/m² by injection and surface spray.</p></div>
+        <div class="step"><span class="idx">04</span><h3>COLUFNAS &amp; Seeding</h3><p>Coir erosion-control matting laid over the treated surface, then hydroseeded with seed, fertilizer, and mulch.</p></div>
+        <div class="step"><span class="idx">05</span><h3>Lab Verification</h3><p>Disturbed and undisturbed samples tested to BS 1377 for particle size, Atterberg limits, permeability, and shear strength.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="wrap content-grid-2">
+    <div>
+      <h2>Verified at the microscale</h2>
+      <p class="desc">Scanning Electron Microscope (SEM) imaging is used alongside XRD and XRF mineralogy analysis to confirm that treated soil particles are physically bonded by precipitated mineral structure — not simply coated or glued, but chemically fused at the grain boundary.</p>
+      <p class="desc">Testing spans both basic classification (particle size, Atterberg limits, specific gravity) and engineering performance (consolidation, permeability, triaxial shear strength), all benchmarked against BS 1377 and Eurocode 7.</p>
+    </div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Test Method</th><th>Standard</th></tr>
+      <tr><td>Particle Size Distribution</td><td>Sieve Analysis</td><td>BS1377-2:1990 Cl. 9.3</td></tr>
+      <tr><td>Atterberg Limit</td><td>Casagrande Method</td><td>BS1377-2:1990 Cl. 4.2–4.3</td></tr>
+      <tr><td>Specific Gravity</td><td>Density Bottle</td><td>BS1377-2:1990 Cl. 8.3</td></tr>
+      <tr><td>Settlement Rate</td><td>Consolidation</td><td>BS1377-5:1990 Cl. 3.5</td></tr>
+      <tr><td>Permeability</td><td>Falling Head</td><td>BS1377-5:1990 Cl. 6.8</td></tr>
+      <tr><td>Shear Strength</td><td>Triaxial</td><td>BS1377-7:1990 Cl. 5.5</td></tr>
+      <tr><td>Mineralogy / Microstructure</td><td>SEM, XRD, XRF</td><td>—</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <div class="wrap">
+    <h2>Want the full lab report for a specific soil type?</h2>
+    <p>We can walk your engineering team through the data for sand, silty sand, silt, or clayey silt.</p>
+    <div class="cta-buttons">
+      <a class="btn-whatsapp" href="#" data-open-modal>💬 Talk to our engineers</a>
+      <a class="btn-outline-light" href="products.html">See the full system →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>VEGE·GROUT</div>
+        <p>Self-sustaining soil stabilization from vegetable waste. Developed with UNITEN, deployed with Geomapping Technology Sdn Bhd.</p>
+        <a class="foot-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+      <div><h4>Site</h4><ul class="footer-links">
+        <li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Case Studies</a></li><li><a href="partners.html">Partners</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul class="footer-links">
+        <li>hello@vegegrout.com</li><li>+60 12-345 6789</li><li>Kajang, Selangor, MY</li>
+      </ul></div>
+      <div><h4>Credentials</h4><ul class="footer-links">
+        <li>Patent MY-174566-A</li><li>TRL 7 · Field Proven</li><li>BS 1377 Compliant Testing</li>
+      </ul></div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 VEGE-GROUT (VG3S). All rights reserved. — dummy content for design preview</span>
+      <span>Privacy Policy</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<script src="assets/script.js"></script>
+</body>
+</html>

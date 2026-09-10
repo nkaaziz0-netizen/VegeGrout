@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — VEGE·GROUT</title>
+<meta name="description" content="Field validation and commercial project history for the Vege-Grout system.">
+<link rel="icon" href="assets/vg3s-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>VEGE·GROUT</a>
+    <div class="nav-center">
+      <nav class="navlinks">
+      <a href="technology.html">Technology</a>
+      <a href="products.html">Products</a>
+      <a href="projects.html" class="active">Case Studies</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="#" data-open-modal>Get a Quote →</a>
+      <div class="nav-actions">
+        <div class="account-wrap" id="accountWrap">
+          <div class="account-chip" id="accountChip" style="display:none;">
+            <span class="account-avatar" id="accountAvatar">?</span>
+            <span class="account-name" id="accountName"></span>
+            <span class="account-caret">▾</span>
+          </div>
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="ad-email" id="accountEmail"></div>
+            <button id="logoutBtn">Log out</button>
+          </div>
+        </div>
+        <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="overlay-close" id="overlayClose">Close ✕</button>
+  <nav>
+    <a href="technology.html" data-nav-link>Technology</a>
+    <a href="products.html" data-nav-link>Products</a>
+    <a href="projects.html" data-nav-link>Case Studies</a>
+    <a href="partners.html" data-nav-link>Partners</a>
+    <a href="about.html" data-nav-link>About</a>
+    <a href="#" id="authTrigger" data-open-auth>Log In</a>
+  </nav>
+  <div class="overlay-foot">
+    <span>Kajang, Selangor, MY</span>
+    <span>hello@vegegrout.com</span>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h3>Request a site assessment</h3>
+    <p class="sub">Tell us about the slope — we'll open WhatsApp with your details filled in.</p>
+    <form id="quoteForm">
+      <div class="field"><label>Name</label><input type="text" id="qName" required></div>
+      <div class="field"><label>Location / slope</label><input type="text" id="qLocation" required></div>
+      <div class="field"><label>Approx. slope size (m²)</label><input type="text" id="qSize"></div>
+      <div class="field"><label>Message</label><textarea rows="3" id="qMessage"></textarea></div>
+      <button type="submit" class="btn-whatsapp">💬 Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<div class="auth-backdrop" id="authBackdrop">
+  <div class="auth-modal">
+    <button class="modal-close" id="authClose">✕</button>
+
+    <form class="auth-form" id="loginForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Log in to your account</h3>
+      <p class="sub">For clients tracking an active or completed slope treatment.</p>
+      <div class="auth-error" id="loginError">Enter a valid email and a password of at least 6 characters.</div>
+      <div class="field"><label>Email</label><input type="email" id="liEmail" required></div>
+      <div class="field"><label>Password</label><input type="password" id="liPassword" required></div>
+      <button type="submit" class="btn-submit">Log In</button>
+      <div class="auth-switch">Don't have an account? <button type="button" id="toSignup">Sign up</button></div>
+    </form>
+
+    <form class="auth-form hidden" id="signupForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Create an account</h3>
+      <p class="sub">Get project updates and monitoring reports for your treated site.</p>
+      <div class="auth-error" id="signupError">Please fill in all fields — passwords must match and be at least 6 characters.</div>
+      <div class="field"><label>Full name</label><input type="text" id="suName" required></div>
+      <div class="field"><label>Email</label><input type="email" id="suEmail" required></div>
+      <div class="field-row">
+        <div class="field"><label>Password</label><input type="password" id="suPassword" required></div>
+        <div class="field"><label>Confirm</label><input type="password" id="suConfirm" required></div>
+      </div>
+      <button type="submit" class="btn-submit">Create Account</button>
+      <div class="auth-switch">Already have an account? <button type="button" id="toLogin">Log in</button></div>
+    </form>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Field Validation</div>
+    <h1>Real-world performance, at scale — not just lab data.</h1>
+    <p class="lede">From a first shallow-landslide repair in 2017 to deep-seated slope projects today, Vege-Grout's field record spans multiple site conditions, soil types, and client organizations across Malaysia.</p>
+    <div class="stat-strip">
+      <div><div class="num">TRL 7</div><div class="lbl">system-prototype demonstrated in an operational environment</div></div>
+      <div><div class="num">RM159K+</div><div class="lbl">in completed project sales &amp; services, 2017–2020</div></div>
+      <div><div class="num">35 days</div><div class="lbl">from bare cut slope to bound, monitored, vegetated ground</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="wrap">
+    <div class="eyebrow">Featured Case Study</div>
+    <div class="featured-case">
+      <div>
+        <span class="cc-loc" style="color:var(--growth)">North–South Expressway · KM261.95 South Bound, Section N5</span>
+        <h3>Cut-slope failure, fully monitored through Day 35.</h3>
+        <p>A phyllite rock slope with low organic content and low pH, following a cut-slope failure, was treated and tracked with close-up photo documentation at every monitoring interval from Day 1 through Day 35 — the same dataset used throughout our Technology page.</p>
+      </div>
+      <div>
+        <div class="featured-timeline">
+          <div class="ftp"><div class="dot"></div><div class="day">Day 1</div></div>
+          <div class="ftp"><div class="dot"></div><div class="day">Day 7</div></div>
+          <div class="ftp"><div class="dot"></div><div class="day">Day 14</div></div>
+          <div class="ftp"><div class="dot"></div><div class="day">Day 21</div></div>
+          <div class="ftp"><div class="dot"></div><div class="day">Day 28</div></div>
+          <div class="ftp"><div class="dot"></div><div class="day">Day 35</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Commercial Track Record</div>
+      <h2>Sales &amp; services, project by project.</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div><span class="cc-loc">2017</span><h3>OPUS Berhad</h3><p>First commercial project — early market validation for the current system.</p></div>
+        <div><span class="cc-badge">Shallow landslide</span></div>
+        <div class="cc-value">RM 68,017.80</div>
+      </div>
+      <div class="case-card">
+        <div><span class="cc-loc">2017–2020</span><h3>MF Construction</h3><p>Follow-on installation contract during the detailed engineering design phase.</p></div>
+        <div><span class="cc-badge">Installation</span></div>
+        <div class="cc-value">RM 25,000.00</div>
+      </div>
+      <div class="case-card">
+        <div><span class="cc-loc">2020</span><h3>Landasan Kapital Sdn. Bhd.</h3><p>Second major commercial project, confirming repeatability outside the original pilot sites.</p></div>
+        <div><span class="cc-badge">Shallow landslide</span></div>
+        <div class="cc-value">RM 91,160.00</div>
+      </div>
+      <div class="case-card">
+        <div><span class="cc-loc">In progress</span><h3>Simpang Pulai — JKR Cawangan Cerun</h3><p>Deep-seated landslide project delivered in partnership with Geomapping Technology Sdn Bhd.</p></div>
+        <div><span class="cc-badge">Deep-seated</span></div>
+        <div class="cc-value">Active</div>
+      </div>
+      <div class="case-card">
+        <div><span class="cc-loc">In progress</span><h3>Pasir Mas, Kelantan — JPS Kelantan</h3><p>Deep-seated landslide project, part of the current Geomapping Technology partnership scope.</p></div>
+        <div><span class="cc-badge">Deep-seated</span></div>
+        <div class="cc-value">Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section reveal">
+  <div class="wrap content-grid-2">
+    <div>
+      <h2>Where it's been proven</h2>
+      <p class="desc">Beyond commercial sites, lab-to-field validation work has run at UNITEN's own student parking lot and at KM22.2, Sg. Betis (Gua Musang–Simpang Pulai) — covering man-made cut slopes, natural slopes, and embankments across sand, silty sand, silt, and clayey silt.</p>
+    </div>
+    <div>
+      <h2>Soil types validated</h2>
+      <div class="badge-row">
+        <span class="badge">Sand</span><span class="badge">Silty Sand</span><span class="badge">Silt</span>
+        <span class="badge">Clayey Silt</span><span class="badge">Soft Rock</span><span class="badge">Phyllite</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <div class="wrap">
+    <h2>Have a similar site to evaluate?</h2>
+    <p>Send us the coordinates and slope condition — we'll tell you if it's a fit.</p>
+    <div class="cta-buttons">
+      <a class="btn-whatsapp" href="#" data-open-modal>💬 Talk to our engineers</a>
+      <a class="btn-outline-light" href="partners.html">Explore partnership options →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>VEGE·GROUT</div>
+        <p>Self-sustaining soil stabilization from vegetable waste. Developed with UNITEN, deployed with Geomapping Technology Sdn Bhd.</p>
+        <a class="foot-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+      <div><h4>Site</h4><ul class="footer-links">
+        <li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Case Studies</a></li><li><a href="partners.html">Partners</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul class="footer-links">
+        <li>hello@vegegrout.com</li><li>+60 12-345 6789</li><li>Kajang, Selangor, MY</li>
+      </ul></div>
+      <div><h4>Credentials</h4><ul class="footer-links">
+        <li>Patent MY-174566-A</li><li>TRL 7 · Field Proven</li><li>BS 1377 Compliant Testing</li>
+      </ul></div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 VEGE-GROUT (VG3S). All rights reserved. — dummy content for design preview</span>
+      <span>Privacy Policy</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<script src="assets/script.js"></script>
+</body>
+</html>

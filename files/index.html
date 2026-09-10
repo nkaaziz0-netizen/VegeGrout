@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — VEGE·GROUT</title>
+<meta name="description" content="Patented self-sustaining bio-grout ground stabilization system.">
+<link rel="icon" href="assets/vg3s-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>VEGE·GROUT</a>
+    <div class="nav-center">
+      <nav class="navlinks">
+      <a href="technology.html">Technology</a>
+      <a href="products.html">Products</a>
+      <a href="projects.html">Case Studies</a>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="#" data-open-modal>Get a Quote →</a>
+      <div class="nav-actions">
+        <div class="account-wrap" id="accountWrap">
+          <div class="account-chip" id="accountChip" style="display:none;">
+            <span class="account-avatar" id="accountAvatar">?</span>
+            <span class="account-name" id="accountName"></span>
+            <span class="account-caret">▾</span>
+          </div>
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="ad-email" id="accountEmail"></div>
+            <button id="logoutBtn">Log out</button>
+          </div>
+        </div>
+        <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="overlay-close" id="overlayClose">Close ✕</button>
+  <nav>
+    <a href="technology.html" data-nav-link>Technology</a>
+    <a href="products.html" data-nav-link>Products</a>
+    <a href="projects.html" data-nav-link>Case Studies</a>
+    <a href="partners.html" data-nav-link>Partners</a>
+    <a href="about.html" data-nav-link>About</a>
+    <a href="#" id="authTrigger" data-open-auth>Log In</a>
+  </nav>
+  <div class="overlay-foot">
+    <span>Kajang, Selangor, MY</span>
+    <span>hello@vegegrout.com</span>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h3>Request a site assessment</h3>
+    <p class="sub">Tell us about the slope — we'll open WhatsApp with your details filled in.</p>
+    <form id="quoteForm">
+      <div class="field"><label>Name</label><input type="text" id="qName" required></div>
+      <div class="field"><label>Location / slope</label><input type="text" id="qLocation" required></div>
+      <div class="field"><label>Approx. slope size (m²)</label><input type="text" id="qSize"></div>
+      <div class="field"><label>Message</label><textarea rows="3" id="qMessage"></textarea></div>
+      <button type="submit" class="btn-whatsapp">💬 Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<div class="auth-backdrop" id="authBackdrop">
+  <div class="auth-modal">
+    <button class="modal-close" id="authClose">✕</button>
+
+    <form class="auth-form" id="loginForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Log in to your account</h3>
+      <p class="sub">For clients tracking an active or completed slope treatment.</p>
+      <div class="auth-error" id="loginError">Enter a valid email and a password of at least 6 characters.</div>
+      <div class="field"><label>Email</label><input type="email" id="liEmail" required></div>
+      <div class="field"><label>Password</label><input type="password" id="liPassword" required></div>
+      <button type="submit" class="btn-submit">Log In</button>
+      <div class="auth-switch">Don't have an account? <button type="button" id="toSignup">Sign up</button></div>
+    </form>
+
+    <form class="auth-form hidden" id="signupForm">
+      <div class="auth-eyebrow">Client Access</div>
+      <h3>Create an account</h3>
+      <p class="sub">Get project updates and monitoring reports for your treated site.</p>
+      <div class="auth-error" id="signupError">Please fill in all fields — passwords must match and be at least 6 characters.</div>
+      <div class="field"><label>Full name</label><input type="text" id="suName" required></div>
+      <div class="field"><label>Email</label><input type="email" id="suEmail" required></div>
+      <div class="field-row">
+        <div class="field"><label>Password</label><input type="password" id="suPassword" required></div>
+        <div class="field"><label>Confirm</label><input type="password" id="suConfirm" required></div>
+      </div>
+      <button type="submit" class="btn-submit">Create Account</button>
+      <div class="auth-switch">Already have an account? <button type="button" id="toLogin">Log in</button></div>
+    </form>
+  </div>
+</div>
+
+<section class="hero" id="heroSection">
+  <div class="wrap hero-grid">
+    <div class="hero-text" id="heroText">
+      <div class="eyebrow">Patented Bio-Grout · MY-174566-A</div>
+      <h1>Turns loose soil into <em>living stone.</em></h1>
+      <p class="lede">A self-sustaining, maintenance-free ground stabilization system made from vegetable waste — engineered to stop slope failure and green the land at the same time.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#" data-open-modal>💬 Talk to our engineers</a>
+        <a class="btn-ghost" href="technology.html">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">46%</div><div class="lbl">lower capital cost vs conventional grout</div></div>
+        <div><div class="num">~1000%</div><div class="lbl">savings on annual maintenance</div></div>
+        <div><div class="num">TRL 7</div><div class="lbl">field-proven, revenue-generating</div></div>
+      </div>
+    </div>
+    <div class="hero-visual" id="heroVisual">
+      <svg viewBox="0 0 500 440" preserveAspectRatio="xMidYMax slice">
+        <path class="hv-root" id="hp1" d="M250,440 C245,360 200,330 150,290 C115,262 95,225 88,175"/>
+        <path class="hv-root" id="hp2" d="M250,440 C255,355 300,325 355,285 C390,258 415,220 425,170"/>
+        <path class="hv-root" id="hp3" d="M250,440 C248,345 225,305 195,265 C172,235 162,200 165,160"/>
+        <path class="hv-root" id="hp4" d="M250,440 C252,348 278,308 312,268 C338,237 350,202 344,162"/>
+        <path class="hv-root" id="hp5" d="M250,440 C246,375 195,360 130,345 C95,337 65,322 40,300"/>
+        <path class="hv-root" id="hp6" d="M250,440 C254,377 308,364 375,352 C412,345 448,330 470,308"/>
+        <circle class="hv-node" id="hn1" cx="88" cy="175" r="5"/>
+        <circle class="hv-node" id="hn2" cx="425" cy="170" r="5"/>
+        <circle class="hv-node" id="hn3" cx="165" cy="160" r="5"/>
+        <circle class="hv-node" id="hn4" cx="344" cy="162" r="5"/>
+      </svg>
+      <div class="hv-tag" id="ht1" style="top:14%">SURFACE — COLUFNAS + SEED</div>
+      <div class="hv-tag" id="ht2" style="top:40%">GROUT ZONE — 0.5–1.0m</div>
+      <div class="hv-tag" id="ht3" style="top:66%">GROUNDWATER FLOW</div>
+      <div class="hv-tag" id="ht4" style="top:88%">STABILIZED PROFILE</div>
+    </div>
+  </div>
+</section>
+
+<section class="problem reveal">
+  <div class="wrap problem-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--growth)">The cost of doing nothing</div>
+      <h2>Slope failure is a recurring, expensive emergency.</h2>
+      <p>Highway authorities across the region are spending heavily on repair and annual upkeep — costs a self-sustaining, vegetated stabilization system is designed to remove almost entirely.</p>
+    </div>
+    <div class="problem-figs">
+      <div class="fig"><div class="n">RM100M+</div><div class="t">typical repair cost, per failure location</div></div>
+      <div class="fig"><div class="n">RM600M</div><div class="t">spent annually on slope maintenance</div></div>
+      <div class="fig"><div class="n">17,605</div><div class="t">slopes identified as at-risk nationally</div></div>
+      <div class="fig"><div class="n">0</div><div class="t">maintenance visits needed post-treatment</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The 5-stage SOP</div>
+      <h2>Coverage spreads the way the grout itself does.</h2>
+    </div>
+    <div class="bloom-field" id="bloomField">
+      <div class="bloom-dots" id="bloomDots"></div>
+      <div class="process-list" id="processList">
+        <div class="step"><span class="idx">01</span><h3>Site Clearing</h3><p>Trim the slope to a stable, uniform profile and clear loose debris before survey work begins.</p></div>
+        <div class="step"><span class="idx">02</span><h3>Resistivity Survey</h3><p>Map groundwater and subsurface layers to pinpoint exact injection points.</p></div>
+        <div class="step"><span class="idx">03</span><h3>Grout Injection</h3><p>Vege-Grout is injected via PVC piping and surface-sprayed at 3.7 L/m² across the grid.</p></div>
+        <div class="step"><span class="idx">04</span><h3>COLUFNAS &amp; Seeding</h3><p>Coir matting and hydroseeding lock in erosion control while roots take hold.</p></div>
+        <div class="step"><span class="idx">05</span><h3>Lab Verification</h3><p>Samples tested to BS 1377 confirm strength, permeability, and stability gains.</p></div>
+      </div>
+    </div>
+    <p style="margin-top:28px;"><a class="btn-ghost" href="technology.html">Full methodology & lab data →</a></p>
+  </div>
+</section>
+
+<section class="monitor reveal" id="projects-teaser">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">North–South Expressway · KM261.95</div>
+      <h2>35 days from bare cut slope to bound, vegetated ground.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 1</div></div>
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 7</div></div>
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 14</div></div>
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 21</div></div>
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 28</div></div>
+      <div class="tpoint"><div class="dot"></div><div class="day">Day 35</div></div>
+    </div>
+    <p style="margin-top:20px;"><a class="btn-ghost" href="projects.html">See all field validation case studies →</a></p>
+  </div>
+</section>
+
+<section class="sustain reveal" id="sustainability">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why it stays fixed</div>
+      <h2>Grown-in stability, not poured-in stability.</h2>
+    </div>
+    <div class="sustain-grid" id="sustainGrid" data-stagger=".sustain-card">
+      <div class="sustain-card"><div class="ic"></div><h3>Self-fertilizing</h3><p>The grout doubles as a nutrient source, so vegetation establishes and keeps reinforcing the soil on its own.</p></div>
+      <div class="sustain-card"><div class="ic" style="background:var(--clay)"></div><h3>Zero maintenance cycle</h3><p>No repeat treatments or repair crews — the system is designed to hold without ongoing intervention.</p></div>
+      <div class="sustain-card"><div class="ic" style="background:var(--moss)"></div><h3>Waste-to-value</h3><p>Made by fermenting vegetable waste, cutting landfill load while lowering the carbon footprint of slope repair.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal" id="contact">
+  <div class="wrap">
+    <h2>Have a slope that needs stabilizing?</h2>
+    <p>Send us the location and slope size — our engineers will get back to you with a site assessment.</p>
+    <div class="cta-buttons">
+      <a class="btn-whatsapp" href="#" data-open-modal>💬 Chat on WhatsApp</a>
+      <a class="btn-outline-light" href="mailto:hello@vegegrout.com">Email us instead</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>VEGE·GROUT</div>
+        <p>Self-sustaining soil stabilization from vegetable waste. Developed with UNITEN, deployed with Geomapping Technology Sdn Bhd.</p>
+        <a class="foot-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+      <div><h4>Site</h4><ul class="footer-links">
+        <li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Case Studies</a></li><li><a href="partners.html">Partners</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul class="footer-links">
+        <li>hello@vegegrout.com</li><li>+60 12-345 6789</li><li>Kajang, Selangor, MY</li>
+      </ul></div>
+      <div><h4>Credentials</h4><ul class="footer-links">
+        <li>Patent MY-174566-A</li><li>TRL 7 · Field Proven</li><li>BS 1377 Compliant Testing</li>
+      </ul></div>
+    </div>
+    <div class="bottom-bar">
+      <span>© 2026 VEGE-GROUT (VG3S). All rights reserved. — dummy content for design preview</span>
+      <span>Privacy Policy</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/60123456789" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<script src="assets/script.js"></script>
+</body>
+</html>
