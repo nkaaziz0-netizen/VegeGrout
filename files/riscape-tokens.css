@@ -1,0 +1,102 @@
+/*
+  RISCAPE design tokens
+  IEI / UNITEN-inspired palette — deep institutional blue + gold accent
+  Usage: import this file once, then reference variables everywhere.
+  Toggle dark mode by setting data-theme="dark" on <html> (or swap to a
+  [data-theme] selector scoped to your app root if you don't control <html>).
+*/
+
+:root {
+  /* ---- surfaces ---- */
+  --bg: #F3F6FA;            /* page background */
+  --bg-soft: #EAF0F8;       /* sidebar / recessed background */
+  --surface: #FFFFFF;       /* card / panel background */
+  --surface-2: #F5F8FC;     /* hover state on surface */
+  --surface-3: #E8EEF6;     /* active / pressed state */
+  --border: #D8E1EC;        /* default hairline */
+  --border-soft: #E3EAF3;   /* lighter divider */
+
+  /* ---- text ---- */
+  --text: #0B2545;          /* primary text */
+  --text-dim: #4C6079;      /* secondary text */
+  --text-faint: #8A9AB0;    /* placeholder / metadata */
+
+  /* ---- brand accents ---- */
+  --accent: #0B3D91;            /* primary interactive (nav active, links) */
+  --accent-strong: #0A2E6E;     /* hover / emphasis */
+  --accent-dim: rgba(11, 61, 145, .09);   /* active nav background */
+  --gold: #C98600;              /* highlight / CTA / hazard markers */
+  --gold-strong: #8A5D00;       /* gold hover / gradient end */
+  --gold-dim: rgba(201, 134, 0, .12);
+  --on-accent: #EAF1FB;         /* text on solid accent fill */
+  --on-gold: #3A2500;           /* text on solid gold fill */
+
+  /* ---- chrome ---- */
+  --panel-bg: rgba(255, 255, 255, .92);   /* floating map panels (glass) */
+  --topbar-bg: rgba(255, 255, 255, .82);  /* sticky top bar */
+  --shadow: 0 8px 24px rgba(11, 37, 69, .10);
+
+  /* ---- map ---- */
+  --map-ocean-1: #D9E8F5;
+  --map-ocean-2: #CDE2F1;
+  --map-grid: #B7D2E8;
+  --map-land: #CDE7D2;
+  --map-land-stroke: #5E9E6A;
+  --map-label: #48607C;
+
+  /* ---- risk / hazard severity scale (fixed meaning, same both modes) ---- */
+  --risk-very-low: #2E7D32;
+  --risk-low: #8BC34A;
+  --risk-medium: #E0A800;
+  --risk-high: #E2790A;
+  --risk-very-high: #C6303A;
+
+  /* ---- layout ---- */
+  --radius: 10px;            /* controls, inputs */
+  --radius-card: 12px;       /* cards / panels, if you want a larger value */
+
+  /* ---- type ---- */
+  --font-display: 'Space Grotesk', sans-serif;  /* headings, logo, KPI numbers */
+  --font-body: 'Inter', sans-serif;             /* everything else */
+  --font-mono: 'IBM Plex Mono', monospace;      /* data values, coordinates, counts */
+}
+
+[data-theme="dark"] {
+  --bg: #0A1420;
+  --bg-soft: #0D1826;
+  --surface: #111E33;
+  --surface-2: #16253D;
+  --surface-3: #1C2E4A;
+  --border: #22334E;
+  --border-soft: #1A2740;
+
+  --text: #EAF1FB;
+  --text-dim: #93A6C4;
+  --text-faint: #5D7396;
+
+  --accent: #5B93FF;
+  --accent-strong: #7FA8FF;
+  --accent-dim: rgba(91, 147, 255, .16);
+  --gold: #FFC72C;
+  --gold-strong: #FFD666;
+  --gold-dim: rgba(255, 199, 44, .14);
+  --on-accent: #071224;
+  --on-gold: #3A2500;
+
+  --panel-bg: rgba(17, 30, 51, .9);
+  --topbar-bg: rgba(10, 20, 32, .72);
+  --shadow: 0 8px 24px rgba(0, 0, 0, .4);
+
+  --map-ocean-1: #0C1B2E;
+  --map-ocean-2: #0A1522;
+  --map-grid: #152640;
+  --map-land: #12351F;
+  --map-land-stroke: #1E5C33;
+  --map-label: #5D7396;
+
+  /* risk scale stays the same in both modes intentionally —
+     severity meaning must not shift when the theme changes */
+  --risk-medium: #FDD835;
+  --risk-high: #FB8C00;
+  --risk-very-high: #E5383B;
+}
